@@ -1,0 +1,26 @@
+# OWASP ZAP Baseline Scan - Rule Threshold Overrides
+# Format: <RULE_ID>	<THRESHOLD>	<NAME (comment only, ZAP ignores this column)>
+# THRESHOLD options: IGNORE | WARN | FAIL
+#
+# These map directly to the Jira tickets:
+#  - Implement Security Headers (CSP, X-Frame-Options, X-Content-Type-Options, X-Powered-By)
+#  - Secure Cookies (Secure flag, HttpOnly flag)
+#  - Strengthen TLS & Transport Security (HSTS)
+#
+# NOTE: Rule IDs shown are ZAP's standard passive-scan rule IDs at time of writing.
+# ZAP updates its rule pack periodically - if a rule ID below doesn't trigger,
+# check the live rule list at: https://www.zaproxy.org/docs/alerts/ and update this file.
+
+10038	FAIL	Content Security Policy (CSP) Header Not Set
+10020	FAIL	X-Frame-Options Header Not Set
+10021	FAIL	X-Content-Type-Options Header Missing
+10037	FAIL	Server Leaks Information via X-Powered-By Header
+10035	FAIL	Strict-Transport-Security Header Not Set
+10036	WARN	Server Leaks Version Information via Server Header
+10010	FAIL	Cookie No HttpOnly Flag
+10011	FAIL	Cookie Without Secure Flag
+10054	WARN	Cookie Without SameSite Attribute
+10063	WARN	Permissions Policy Header Not Set
+90022	IGNORE	Application Error Disclosure
+10015	WARN	Re-examine Cache-control Directives
+10027	IGNORE	Information Disclosure - Suspicious Comments
